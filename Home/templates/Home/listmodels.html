@@ -1,0 +1,19 @@
+{% extends 'Home/index.html' %}
+{% block content %}
+    <div style="background-color: #f1f7fc; padding-bottom: 30px;">
+        <div class='container'>
+            <legend class='pt-2' align='center'>List of all Models</legend>
+            {% for service in services %}
+                <div class="col-sm-6 item" style="padding-top: 30px;">
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="text-monospace name" style="font-size: 20px;">{{ service.title }}</h3>
+                            <p class="text-justify text-body description" style="margin-bottom: 10px;font-size: 18px;">{{ service.about }}</p>
+                            <a class="btn btn-dark" role="button" href="{% url service.link %}" style="font-size: 18px;background-color: rgba(52,58,64,0.8);">Try now</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

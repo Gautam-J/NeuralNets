@@ -1,8 +1,10 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 from .models import Service
 
 import json
 from django.http import HttpResponse
+
+# might have to change all views to CreateListView to use the search bar???
 
 
 class ServicesView(ListView):
@@ -10,6 +12,23 @@ class ServicesView(ListView):
     template_name = 'Home/home.html'
     context_object_name = 'services'
     ordering = ['-pk']
+    paginate_by = 4
+
+
+class AboutView(TemplateView):
+    template_name = 'Home/about.html'
+
+
+class ContactView(TemplateView):
+    template_name = 'Home/contact.html'
+
+
+class ListAllModelsView(ListView):
+    model = Service
+    template_name = 'Home/listmodels.html'
+    context_object_name = 'services'
+    ordering = ['-pk']
+    paginate_by = 10
 
 
 # for autocomplete on the search field in navbar

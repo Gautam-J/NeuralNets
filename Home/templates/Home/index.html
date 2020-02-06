@@ -3,11 +3,13 @@
 <html>
 
 <head>
+    <!-- Required Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -23,53 +25,72 @@
 </head>
 
 <body style="background-color: #fcfeff;">
+
     <!-- Navigation Bar  -->
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-search" style="background-color: #fcfeff;">
-        <div class="container"><a class="navbar-brand" href="#">NeuralNets</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navcol-1">
-                <form class="form-inline mr-auto" method="POST" target="_blank">
+        <div class="container">
+            <!-- Home Logo / Name -->
+            <a class="navbar-brand" href="{% url 'home-view' %}">NeuralNets</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+                <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Elements in navbar -->
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <form class="form-inline mr-auto" method="get">
                     {% csrf_token %}
-                    <div class="form-group"><label for="search-field"><i class="fa fa-search" style="color: rgb(27,37,45);"></i></label><input class="form-control form-control-lg search-field" type="search" name="search" placeholder="Search" autocomplete="on" id="search-field"></div>
+                    <div class="form-group">
+                        <label for="search-field"><i class="fa fa-search" style="color: rgb(27,37,45);"></i></label>
+                        <input class="form-control form-control-lg search-field" type="search" name="search" placeholder="Search" autocomplete="on" id="search-field">
+                    </div>
                 </form>
                 <ul class="nav navbar-nav">
-                    <li class="nav-item text-monospace" role="presentation"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item text-monospace" role="presentation"><a class="nav-link" href="#">Contact Us</a></li>
+                    <li class="nav-item text-monospace" role="presentation"><a class="nav-link" href="{% url 'about-view' %}">About</a></li>
+                    <li class="nav-item text-monospace" role="presentation"><a class="nav-link" href="{% url 'contact-view' %}">Contact Us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <!-- Main content -->
     <div>
         {% block content %}{% endblock content %}
     </div>
+
     <!-- Website footer -->
     <div class="footer-dark">
         <footer>
             <div class="container">
                 <div class="row">
+                    <!-- Left Column -->
                     <div class="col-sm-6 col-md-3 item">
                         <h3>Quick Links</h3>
                         <ul>
-                            <li><a href="#">Tensorflow</a></li>
-                            <li><a href="#">Scikit-learn</a></li>
-                            <li><a href="#">Pytorch</a></li>
+                            <li><a href="https://www.tensorflow.org/" target='_blank'>Tensorflow</a></li>
+                            <li><a href="https://scikit-learn.org/stable/modules/classes.html" target='_blank'>Scikit-learn</a></li>
+                            <li><a href="https://pytorch.org/docs/stable/nn.html" target='_blank'>Pytorch</a></li>
                         </ul>
                     </div>
+                    <!-- Right Column -->
                     <div class="col-sm-6 col-md-3 item">
                         <h3>References</h3>
                         <ul>
-                            <li><a href="#">Sentdex</a></li>
-                            <li><a href="#">Corey Schafer</a></li>
-                            <li></li>
+                            <li><a href="https://docs.python.org/3.8/library/index.html" target="_blank">Python</a></li>
+                            <li><a href="https://docs.djangoproject.com/en/3.0/contents/" target='_blank'>Django</a></li>
                         </ul>
                     </div>
+                    <!-- Description -->
                     <div class="col-md-6 item text">
                         <h3>NeuralNets</h3>
-                        <p>A website created using the Django Web Framework, to allow users to play with machine learning models, and more specifically Neural Networks, mostly trained using the tf.keras API. All models are hosted on the server, and thus
-                            no computation takes place on the client side.</p>
+                        <p>A website created using the Django Web Framework, to allow users to play with machine learning models, and more specifically Neural Networks, mostly trained using the tf.keras API. All models are hosted on the server, and thus no computation takes place on the client side.</p>
                     </div>
-                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-github"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-android-mail"></i></a></div>
+                    <!-- Social Links -->
+                    <div class="col item social">
+                        <a href="https://www.facebook.com/Gautam.Jayapal" target='_blank'><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com/GautamJayapal" target='_blank'><i class="fa fa-twitter"></i></a>
+                        <a href="https://github.com/Gautam-J" target='_blank'><i class="fa fa-github"></i></a>
+                        <a href="https://www.instagram.com/gautam.j" target='_blank'><i class="fa fa-instagram"></i></a>
+                        <a href="mailto:gautam.jayapal@gmail.com" target='_blank'><i class="fa fa-envelope"></i></a>
+                    </div>
                 </div>
                 <p class="copyright">NeuralNets © 2020</p>
             </div>

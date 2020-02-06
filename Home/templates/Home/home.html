@@ -1,12 +1,14 @@
 {% extends 'Home/index.html' %}
 {% block content %}
+    <!-- Promo Jumbotron -->
     <div id="promo" style="padding: 2px;margin: 0px;padding-right: 0px;padding-bottom: 2px;background-color: #b2c2d0;">
         <div class="jumbotron jumbotron-fluid text-monospace text-center" style="background-color: rgba(34,34,34,0.82);margin: 0px 0px;margin-right: 0px;margin-left: 0px;margin-top: 0px;margin-bottom: 0px;opacity: 1;padding: 0px;padding-top: 25px;padding-bottom: 25px;padding-right: 30px;padding-left: 30px;">
             <h1 class="display-4 text-monospace text-center text-light" style="font-size: 50px;">Welcome to NeuralNets!</h1>
             <p class="lead text-monospace text-center text-white">Unleash the power of Artificial Intelligence, and get to know what happens when Human Intelligence and Artificial Intelligence work together. Play with your favourite Neural Networks and enjoy the predictions!</p>
-            <p style="margin-bottom: -10px;"><a class="btn btn-primary" role="button" href="#">Learn more</a></p>
+            <p style="margin-bottom: -10px;"><a class="btn btn-primary" role="button" href="{% url 'about-view' %}">Learn more</a></p>
         </div>
     </div>
+    <!-- Services -->
     <div class="projects-horizontal" style="background-color: #f1f7fc;">
         <div class="container">
             <div class="intro">
@@ -19,13 +21,15 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="text-monospace name" style="font-size: 25px;">{{ service.title }}</h3>
-                                <p class="text-justify text-body description" style="margin-bottom: 10px;font-size: 20px;">{{ service.about }}</p><a class="btn btn-dark" role="button" href="{% url service.link %}" style="font-size: 20px;background-color: rgba(52,58,64,0.8);">Try now</a></div>
+                                <p class="text-justify text-body description" style="margin-bottom: 10px;font-size: 20px;">{{ service.about }}</p>
+                                <a class="btn btn-dark" role="button" href="{% url service.link %}" style="font-size: 20px;background-color: rgba(52,58,64,0.8);">Try now</a>
+                            </div>
                         </div>
                     </div>
                 {% endfor %}
             </div>
             <div>
-                <p class='text-center'><a class='btn btn-outline-dark' role='button' href="#">View all Models</a></p>
+                <p class='text-center m-0 pb-4'><a class='btn btn-outline-dark' role='button' href="{% url 'listmodels-view' %}">View all Models</a></p>
             </div>
         </div>
     </div>
