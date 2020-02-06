@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+
+    <!-- Custom CCS -->
+    <link rel="stylesheet" href="{% static 'Home/styles.css' %}">
+
+    <title>NeuralNets</title>
+</head>
+
+<body style="background-color: #fcfeff;">
+    <!-- Navigation Bar  -->
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search" style="background-color: #fcfeff;">
+        <div class="container"><a class="navbar-brand" href="#">NeuralNets</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <form class="form-inline mr-auto" method="POST" target="_blank">
+                    {% csrf_token %}
+                    <div class="form-group"><label for="search-field"><i class="fa fa-search" style="color: rgb(27,37,45);"></i></label><input class="form-control form-control-lg search-field" type="search" name="search" placeholder="Search" autocomplete="on" id="search-field"></div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item text-monospace" role="presentation"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item text-monospace" role="presentation"><a class="nav-link" href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Main content -->
+    <div>
+        {% block content %}{% endblock content %}
+    </div>
+    <!-- Website footer -->
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#">Tensorflow</a></li>
+                            <li><a href="#">Scikit-learn</a></li>
+                            <li><a href="#">Pytorch</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>References</h3>
+                        <ul>
+                            <li><a href="#">Sentdex</a></li>
+                            <li><a href="#">Corey Schafer</a></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>NeuralNets</h3>
+                        <p>A website created using the Django Web Framework, to allow users to play with machine learning models, and more specifically Neural Networks, mostly trained using the tf.keras API. All models are hosted on the server, and thus
+                            no computation takes place on the client side.</p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-github"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-android-mail"></i></a></div>
+                </div>
+                <p class="copyright">NeuralNets © 2020</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- jQuery !-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
+    <!-- jQuery UI !-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <!-- autocomplete for search field on navbar -->
+    <script>
+        $(function() {
+            $("#search-field").autocomplete({
+                source: "/ajax_calls/myFunction",
+                minLength: 1,
+            });
+        });
+    </script>
+</body>
+</html>
