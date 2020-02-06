@@ -12,7 +12,7 @@ class ServicesView(ListView):
     template_name = 'Home/home.html'
     context_object_name = 'services'
     ordering = ['-pk']
-    paginate_by = 4
+    paginate_by = 4  # only to view the latest 4 models
 
 
 class AboutView(TemplateView):
@@ -29,6 +29,18 @@ class ListAllModelsView(ListView):
     context_object_name = 'services'
     ordering = ['-pk']
     paginate_by = 10
+
+
+class SearchResultsView(ListView):
+    model = Service
+    context_object_name = 'services'
+    template_name = 'Home/search.html'
+
+    def get_queryset(self):
+        if len(self.args) > 0:
+            return Service.objects.filter(title__icontains=self.args[0])
+        else:
+            return Service.objects.all()
 
 
 # for autocomplete on the search field in navbar
