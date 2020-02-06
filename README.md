@@ -5,4 +5,6 @@ In order to use this website, simply clone the repo and run the server (developm
 
 `git clone https://github.com/Gautam-J/NeuralNets.git`
 
+`python -m pip install -r requirements.txt`
+
 `python manage.py runserver`
