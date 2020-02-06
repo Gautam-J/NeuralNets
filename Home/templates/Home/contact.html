@@ -1,11 +1,28 @@
 {% extends 'Home/index.html' %}
+{% load static %}
 {% block content %}
-    <div style="background-color: #f1f7fc;">
-        <div class='container'>
-            <legend class='pt-2' align='center'>Contact Us</legend>
-            <p class="m-0 pb-4">
-                This is the contact us page.
-            </p>
+    <div class="team-boxed">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Contact Us</h2>
+                <p class="text-center">This website was developed as an initiative to explore the functions of Django. Being someone who is interested in ML and AI, I thought why not combine the both to provide users an immersive experience.</p>
+            </div>
+            <div class="row text-monospace justify-content-center align-items-center people">
+                <div class="col-md-6 col-lg-4 item">
+                    <div class="box"><img class="rounded-circle" src="{% static 'Home/profile.jpg' %}">
+                        <h3 class="name">Gautam J</h3>
+                        <p class="title">Tech enthusiast<br></p>
+                        <p class="description">Just a student from India, who's into programming, specifically interested in Machine Learning and Artificial Intelligence.</p>
+                        <div class="col item social">
+                            <a href="https://www.facebook.com/Gautam.Jayapal" target='_blank'><i class="fa fa-facebook-official"></i></a>
+                            <a href="https://twitter.com/GautamJayapal" target='_blank'><i class="fa fa-twitter"></i></a>
+                            <a href="https://github.com/Gautam-J" target='_blank'><i class="fa fa-github"></i></a>
+                            <a href="https://www.instagram.com/gautam.j" target='_blank'><i class="fa fa-instagram"></i></a>
+                            <a href="mailto:gautam.jayapal@gmail.com" target='_blank'><i class="fa fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock content %}

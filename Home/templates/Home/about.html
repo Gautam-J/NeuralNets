@@ -1,11 +1,25 @@
 {% extends 'Home/index.html' %}
 {% block content %}
-    <div style="background-color: #f1f7fc;">
-        <div class='container'>
-            <legend class='pt-2' align='center'>About</legend>
-            <p class='m-0 pb-4'>
-                This is the about page.
-            </p>
+    <div class="features-clean">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">About</h2>
+                <p class="text-center">A website created using the Django Web Framework, to allow users to play with machine learning models, and more specifically Neural Networks, mostly trained using the tf.keras API.</p>
+            </div>
+            <div class="row features">
+                <div class="col-sm-6 col-lg-4 item">
+                    <h3 class="name">Tensorflow</h3>
+                    <p class="description">Google's tensorflow was used mainly for training a lot of the models hosted on this website, more specifically, tf.keras API was used to train the neural networks.</p>
+                </div>
+                <div class="col-sm-6 col-lg-4 item">
+                    <h3 class="name">Scikit Learn</h3>
+                    <p class="description">Python's sklearn library was used for training popular machine algorithms such as Support Vector Machines and Random Forests. A lot of preprocessing was done using the same.</p>
+                </div>
+                <div class="col-sm-6 col-lg-4 item">
+                    <h3 class="name">Django</h3>
+                    <p class="description">Django Web Framework provided an organized and dynamic way to build this website, on top of python.</p>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock content %}

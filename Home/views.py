@@ -4,8 +4,6 @@ from .models import Service
 import json
 from django.http import HttpResponse
 
-# might have to change all views to CreateListView to use the search bar???
-
 
 class ServicesView(ListView):
     model = Service
@@ -28,7 +26,6 @@ class ListAllModelsView(ListView):
     template_name = 'Home/listmodels.html'
     context_object_name = 'services'
     ordering = ['-pk']
-    paginate_by = 10
 
 
 class SearchResultsView(ListView):
