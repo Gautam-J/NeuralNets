@@ -8,13 +8,19 @@ import joblib
 class CreateIrisDataView(generic.CreateView):
     model = IrisData
     template_name = 'Iris\\create.html'
-    fields = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
     success_url = '/create'
+
+    fields = [
+        'sepal_length',
+        'sepal_width',
+        'petal_length',
+        'petal_width'
+    ]
 
     def get(self, request, *args, **kwargs):
         print('Loading necessary files')
         global svc_model, encoder, scaler
-        svc_model = joblib.load('Iris\\iris_model\\svc.pkl')
+        svc_model = joblib.load('Iris\\iris_model\\model.pkl')
         encoder = joblib.load('Iris\\iris_model\\encoder.pkl')
         scaler = joblib.load('Iris\\iris_model\\scaler.pkl')
         print('Files loaded')

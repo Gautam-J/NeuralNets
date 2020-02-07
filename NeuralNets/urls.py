@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Home.urls')),
     path('iris/', include('Iris.urls')),
+    path('titanic/', include('Titanic.urls')),
 ]

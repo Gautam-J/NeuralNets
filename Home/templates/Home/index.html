@@ -37,10 +37,9 @@
             <!-- Elements in navbar -->
             <div class="collapse navbar-collapse" id="navcol-1">
                 <form class="form-inline mr-auto" method="get" action="{% url 'searchresults-view' %}">
-                    <!-- {% csrf_token %} -->
                     <div class="form-group">
                         <label for="search-field"><i class="fa fa-search" style="color: rgb(27,37,45);"></i></label>
-                        <input class="form-control form-control-lg search-field" type="search" name="q" placeholder="Search" autocomplete="on" id="search-field">
+                        <input class="form-control form-control-lg search-field" type="text" name="q" placeholder="Search" autocomplete="on" id="search-field">
                     </div>
                 </form>
                 <ul class="nav navbar-nav">

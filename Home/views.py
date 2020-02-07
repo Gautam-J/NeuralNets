@@ -34,10 +34,9 @@ class SearchResultsView(ListView):
     template_name = 'Home/search.html'
 
     def get_queryset(self):
-        if len(self.args) > 0:
-            return Service.objects.filter(title__icontains=self.args[0])
-        else:
-            return Service.objects.all()
+        query = self.request.GET.get('q')
+        object_list = Service.objects.filter(title__icontains=query)
+        return object_list
 
 
 # for autocomplete on the search field in navbar

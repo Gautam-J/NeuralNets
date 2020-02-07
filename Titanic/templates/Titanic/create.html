@@ -1,0 +1,22 @@
+{% extends 'Home/index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class='container'>
+        <form method='POST'>
+            {% csrf_token %}
+            <legend align='center'>Titanic Survival Prediction</legend>
+            {{ form|crispy }}
+            <div class='form-group'>
+                <button class='btn btn-dark' type='submit'>Submit</button>
+            </div>
+            <div class='form-group'>
+                {% if prediction %}
+                    <h4>Prediction: {{ prediction }}</h4>
+                {% endif %}
+            </div>
+        </form>
+        <div class='mb-2'>
+            To go back to main page, click <a href="{% url 'home-view' %}">HERE</a>
+        </div>
+    </div>
+{% endblock content %}

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'Home.apps.HomeConfig',
     'Iris.apps.IrisConfig',
+    'Titanic.apps.TitanicConfig',
 ]
 
 MIDDLEWARE = [
