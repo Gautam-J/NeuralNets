@@ -10,7 +10,6 @@ import pandas as pd
 class CreateTitanicDataView(generic.CreateView):
     model = TitanicData
     template_name = 'Titanic\\create.html'
-    success_url = '/create'
 
     fields = [
         'passenger_class',

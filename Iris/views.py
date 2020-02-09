@@ -8,7 +8,6 @@ import joblib
 class CreateIrisDataView(generic.CreateView):
     model = IrisData
     template_name = 'Iris\\create.html'
-    success_url = '/create'
 
     fields = [
         'sepal_length',

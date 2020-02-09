@@ -14,9 +14,9 @@ class TitanicData(models.Model):
     passenger_class = models.IntegerField(choices=P_CLASS_CHOICES)
     sex = models.CharField(max_length=50, choices=GENDER_CHOICES)
     age = models.IntegerField()
-    siblings_or_spouse = models.IntegerField()
-    parents_or_children = models.IntegerField()
-    fare = models.FloatField()
+    siblings_or_spouse = models.IntegerField(verbose_name='Number of siblings / spouse travelling')
+    parents_or_children = models.IntegerField(verbose_name='Number of parents / children travelling')
+    fare = models.FloatField(verbose_name='Ticket Fare (0 - 250)')
     prediction = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
