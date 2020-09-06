@@ -14,3 +14,6 @@ In order to use this website, simply clone the repo and run the server (developm
 `python -m pip install -r requirements.txt`
 
 `python manage.py runserver`
+
+### TODO:
+Use Tensorflow.js library to host neural networks instead of running them from a python server.
